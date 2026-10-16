@@ -1,0 +1,29 @@
+ICON COLLECTIONS INCLUDED WITH ICONO 0.1.0
+
+Tabler Icons, v3.48.0 collection metadata
+Copyright (c) 2020-2026 Paweł Kuna
+https://github.com/tabler/tabler-icons
+MIT License: see Tabler-MIT.txt.
+Bundled from @iconify-json/tabler 1.2.41. Original collection has 6,268 SVG variants;
+matched outline and filled variants are grouped in the panel.
+
+Font Awesome Free 6.7.2 — Brands
+Copyright Fonticons, Inc. / Dave Gandy
+https://fontawesome.com
+Icons licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+See FontAwesome-Free.txt for the full Font Awesome Free licensing notice.
+Bundled from @iconify-json/fa6-brands 1.2.6. Includes 495 brand icons.
+
+Iconify JSON distributions
+https://github.com/iconify/icon-sets
+The upstream licenses of the individual icon collections apply.
+
+Modifications in this panel: grouped variants, Spanish search synonyms, SVG normalization,
+user-selected coloring, strokes, gradients, backgrounds and transparency masks.
+SVG exports carry a source attribution in their desc element. Keep the applicable
+attribution with redistributed icon files; PNG has no equivalent visible attribution.
+
+Icono panel code: Copyright (c) 2026 Tenka. MIT License; see the repository LICENSE
+or licenses/Icono-MIT.txt in the CCX package. Third-party icon artwork remains subject
+to the licenses above. This plugin is not affiliated with Adobe or the represented brands.

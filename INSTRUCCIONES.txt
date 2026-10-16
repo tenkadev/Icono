@@ -1,0 +1,92 @@
+ICONO — PANEL DE ICONOS PARA PHOTOSHOP
+Versión 0.1.0 · Primera versión de prueba · Windows / Photoshop 26 o posterior
+
+INSTALACIÓN RÁPIDA
+1. Extrae el ZIP completo en una carpeta de tu equipo.
+2. Abre Icono-0.1.0.ccx con doble clic. Creative Cloud debe ofrecer instalarlo.
+   Es un paquete experimental que no está publicado ni verificado en Adobe Marketplace.
+3. Abre Photoshop y ve a Plugins > Icono > Icono.
+4. Abre o crea un documento, busca un icono y pulsa Insertar en Photoshop.
+
+SI CREATIVE CLOUD NO ADMITE EL CCX
+Puedes cargar el código directamente mediante la herramienta oficial de desarrollo:
+1. En Creative Cloud, busca e instala UXP Developer Tool.
+2. En Photoshop abre Edición > Preferencias > Plugins y activa Modo de desarrollador
+   (Developer Mode). Reinicia Photoshop si te lo solicita.
+3. Abre UXP Developer Tool. Pulsa Add Plugin / Añadir plugin.
+4. Selecciona plugin/manifest.json dentro de la carpeta extraída.
+5. Pulsa Load / Cargar. El panel debe aparecer en Photoshop.
+6. Después de editar el código: Actions (...) > Reload. Puedes generar el CCX mediante
+   Actions (...) > Package, que es la vía de empaquetado recomendada por Adobe.
+
+PARA USARLO
+- Busca WhatsApp, Instagram, ubicación, teléfono, corazón, diente, mascota, etc.
+- Los nombres originales de las colecciones están en inglés. Incluye sinónimos en
+  español para muchos conceptos comunes; si no aparece algo, prueba también en inglés.
+- Colecciones: Todos, Redes y marcas, Esenciales, Favoritos.
+- Estilos rápidos: Solo, Círculo, Degradado y Calado.
+- Símbolo: color plano, degradado de dos colores o calado transparente.
+- Fondo: sin fondo, círculo, cuadrado o cuadrado redondeado.
+- Fondo y borde tienen controles propios; puedes elegir fondo transparente con borde.
+- Color de marca aplica un color de referencia a las principales redes sociales.
+- El degradado incluye sus dos colores y el ángulo. El calado deja ver el diseño de abajo.
+- Tamaño de salida: 16 a 8192 px para SVG. PNG: hasta 4096 px.
+- La exportación usa un lienzo cuadrado del tamaño elegido. Al insertar, se ajusta
+  el lado mayor visible del icono a ese tamaño; puede diferir del margen del SVG exportado.
+- La estrella guarda un favorito. En Photoshop se conservan los favoritos y el último
+  estilo en los datos privados del plugin.
+- Insertar crea una capa nueva de objeto inteligente. Ctrl+Z deshace la inserción.
+- Si Photoshop no interpreta un SVG particular como esperas, elige PNG en Insertar como.
+- Para un estilo nuevo, selecciónalo en el panel e inserta otra copia. Esta versión
+  no edita ni reemplaza automáticamente una capa que ya esté en el documento.
+
+QUÉ INCLUYE
+5.706 entradas locales: redes y marcas de Font Awesome Free + Tabler Icons.
+1.056 iconos de Tabler tienen ambas variantes nativas, contorno y relleno.
+En los iconos que solo tienen contorno, la opción Rellena aparece desactivada.
+En marcas sin variante de contorno, Contorno dibuja el borde de sus trazados.
+Los colores de marca son referencias planas; no incluyen todas las versiones oficiales
+multicolor de cada logotipo. Los colores y degradados del panel son editables.
+Sin cuentas, suscripciones, claves de API, servidor ni conexión a internet para usarlo.
+
+ESTADO DE LAS PRUEBAS
+Se comprobaron la interfaz en navegador, búsqueda, favoritos, exportación SVG/PNG,
+transparencia real, degradados, variantes y lógica del puente con una API simulada.
+La instalación CCX, comunicación UXP real e inserción/renderizado en Photoshop
+quedan pendientes de validación en la aplicación real.
+Esta es una versión de prueba; no equivale a una certificación de compatibilidad de Adobe.
+
+SI FALLA
+Reporta el problema en https://github.com/tenkadev/Icono/issues e incluye los pasos
+para reproducirlo, una captura y la versión de Photoshop de Ayuda > Información del sistema.
+Si el panel está vacío, comprueba que Creative Cloud tenga actualizado UXP WebView
+Support. El panel utiliza un WebView local para representar degradados y máscaras.
+
+VISTA INDEPENDIENTE
+ABRIR-VISTA-PREVIA.html funciona con doble clic en Chrome o Edge, sin instalar nada.
+Permite buscar, personalizar y guardar SVG/PNG. Insertar en Photoshop solo se habilita
+cuando la interfaz corre como plugin dentro de Photoshop.
+
+ARCHIVOS
+Icono-0.1.0.ccx             Paquete de prueba para Creative Cloud.
+plugin/                    Código completo del panel, listo para UXP Developer Tool.
+ABRIR-VISTA-PREVIA.html     Copia independiente con todos los iconos incluidos.
+tests/                     Pruebas de renderizado, interfaz y puente de Photoshop.
+tools/                     Construcción del catálogo y del paquete.
+docs/images/               Capturas del panel.
+qa/                        Resultados locales al ejecutar las pruebas (no se distribuyen).
+plugin/licenses/           Licencias y atribuciones de los iconos.
+README.md                  Documentación, desarrollo y contribuciones.
+LICENSE                    Licencia MIT del código de Icono.
+
+REUTILIZACIÓN
+El código de Icono usa licencia MIT. Puedes reutilizarlo, modificarlo y distribuirlo,
+también comercialmente, conservando el copyright y la licencia.
+Los iconos de Tabler mantienen MIT y los de Font Awesome Brands, CC BY 4.0.
+Conserva las atribuciones correspondientes al redistribuirlos.
+
+REFERENCIAS TÉCNICAS
+https://developer.adobe.com/uxp/guides/tutorials/build-your-first-plugin/
+https://developer.adobe.com/uxp/guides/how-to/distribution/package/
+https://developer.adobe.com/photoshop/uxp/2022/uxp-api/reference-js/global-members/html-elements/html-web-view-element
+https://developer.adobe.com/photoshop/uxp/2022/ps-reference/media/executeasmodal

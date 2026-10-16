@@ -1,0 +1,19 @@
+{
+  "manifestVersion": 5,
+  "id": "com.icono.local.photoshop",
+  "name": "Icono",
+  "version": "0.1.0",
+  "main": "index.html",
+  "host": {"app": "PS", "minVersion": "26.0.0", "data": {"apiVersion": 2}},
+  "entrypoints": [{
+    "type": "panel", "id": "icono", "label": {"default": "Icono"},
+    "minimumSize": {"width": 330, "height": 450},
+    "maximumSize": {"width": 1800, "height": 1800},
+    "preferredDockedSize": {"width": 390, "height": 820},
+    "preferredFloatingSize": {"width": 900, "height": 780}
+  }],
+  "requiredPermissions": {
+    "localFileSystem": "request",
+    "webview": {"allow": "yes", "domains": [], "allowLocalRendering": "yes", "enableMessageBridge": "localAndRemote"}
+  }
+}

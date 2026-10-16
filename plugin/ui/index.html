@@ -1,0 +1,47 @@
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+<title>Icono · Tu panel de iconos</title><link rel="stylesheet" href="styles.css"></head>
+<body>
+<header><div class="identity"><span class="mark">i</span><div><h1>icono<span>0.1</span></h1><p>Busca. Personaliza. Inserta.</p></div></div><span class="offline"><i></i> Sin conexión</span></header>
+<div id="browserNote" class="browser-note" hidden>Vista independiente. Puedes guardar SVG y PNG; la inserción directa se activa dentro de Photoshop.</div>
+<main>
+ <section class="library" aria-label="Biblioteca de iconos">
+  <div class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="WhatsApp, ubicación, corazón…" aria-label="Buscar icono" autocomplete="off"><kbd>/</kbd></div>
+  <nav class="tabs" aria-label="Colecciones"><button data-filter="all" class="active">Todos</button><button data-filter="brands">Redes y marcas</button><button data-filter="common">Esenciales</button><button data-filter="favorites">★ Favoritos</button></nav>
+  <div class="library-meta"><span id="resultCount"></span><button id="clearSearch" class="text-button" hidden>Limpiar</button></div>
+  <div id="grid" class="icon-grid" role="list" aria-label="Resultados"></div>
+  <p id="empty" class="empty" hidden>No hay resultados. Prueba una palabra en inglés o cambia de colección.</p>
+  <button id="more" class="more" hidden>Mostrar más iconos</button>
+  <div class="library-foot">Tabler Icons + Font Awesome Free<span>Todo incluido · Sin suscripción</span></div>
+ </section>
+ <section class="editor" aria-label="Personalizar icono">
+  <div class="selected-title"><div><h2 id="selectedName">WhatsApp</h2><p id="selectedFamily"></p></div><button id="favorite" class="favorite" aria-label="Guardar en favoritos" aria-pressed="false">☆</button></div>
+  <div id="preview" class="preview checker"><div id="previewIcon"></div><span id="sizeHint"></span><button id="previewBg" title="Cambiar fondo de vista previa" aria-label="Cambiar fondo de vista previa">◐</button></div>
+  <div class="presets"><button data-preset="solo">Solo</button><button data-preset="circle">Círculo</button><button data-preset="gradient">Degradado</button><button data-preset="cutout">Calado</button></div>
+  <div class="controls">
+   <div class="section-title">SÍMBOLO <button id="brandColor" class="text-button">Color de marca</button></div>
+   <div class="row"><label for="variant">Variante</label><select id="variant"><option value="auto">Original</option><option value="outline">Contorno</option><option value="solid">Rellena</option></select></div>
+   <div class="row"><label for="iconMode">Interior</label><select id="iconMode"><option value="solid">Color plano</option><option value="gradient">Degradado</option><option value="cutout">Transparente / calado</option></select></div>
+   <div id="iconColors" class="colors"><label class="color-field"><input type="color" id="color" aria-label="Color del símbolo"><input id="colorHex" class="hex" value="#FFFFFF" aria-label="Color del símbolo hexadecimal" maxlength="7"></label><label class="color-field" id="color2Wrap" hidden><input type="color" id="color2" aria-label="Segundo color del símbolo"><input id="color2Hex" class="hex" aria-label="Segundo color hexadecimal" maxlength="7"></label></div>
+   <div id="iconAngleRow" class="row range-row" hidden><label for="angle">Ángulo</label><input type="range" id="angle" min="0" max="360" step="1"><output id="angleValue"></output></div>
+   <div id="strokeRow" class="row range-row"><label for="stroke">Grosor</label><input type="range" id="stroke" min="0.5" max="4" step="0.1"><output id="strokeValue"></output></div>
+   <div class="section-title">FONDO Y BORDE</div>
+   <div class="row"><label for="shape">Forma</label><select id="shape"><option value="none">Sin fondo</option><option value="circle">Círculo</option><option value="rounded">Cuadrado redondeado</option><option value="square">Cuadrado</option></select></div>
+   <div id="backgroundControls" hidden>
+    <div class="row"><label for="bgMode">Relleno</label><select id="bgMode"><option value="solid">Color plano</option><option value="gradient">Degradado</option><option value="none">Transparente</option></select></div>
+    <div id="bgColors" class="colors"><label class="color-field"><input type="color" id="bgColor" aria-label="Color de fondo"><input id="bgColorHex" class="hex" aria-label="Color de fondo hexadecimal" maxlength="7"></label><label class="color-field" id="bgColor2Wrap" hidden><input type="color" id="bgColor2" aria-label="Segundo color de fondo"><input id="bgColor2Hex" class="hex" aria-label="Segundo color de fondo hexadecimal" maxlength="7"></label></div>
+    <div id="bgAngleRow" class="row range-row" hidden><label for="bgAngle">Ángulo</label><input type="range" id="bgAngle" min="0" max="360" step="1"><output id="bgAngleValue"></output></div>
+    <div class="row range-row"><label for="scale">Símbolo</label><input type="range" id="scale" min="20" max="85" step="1"><output id="scaleValue"></output></div>
+    <label class="check-row"><input type="checkbox" id="border"> Añadir borde</label>
+    <div id="borderControls" hidden><div class="colors"><label class="color-field"><input type="color" id="borderColor" aria-label="Color de borde"><input id="borderColorHex" class="hex" aria-label="Color de borde hexadecimal" maxlength="7"></label></div><div class="row range-row"><label for="borderWidth">Grosor</label><input type="range" id="borderWidth" min="0.2" max="15" step="0.2"><output id="borderWidthValue"></output></div></div>
+   </div>
+   <div class="section-title">SALIDA</div>
+   <div class="row"><label for="size">Tamaño</label><div class="size-field"><input id="size" type="number" min="16" max="8192" step="1" value="512" aria-label="Tamaño de salida en píxeles"><span>px</span></div></div>
+   <div class="row"><label for="format">Insertar como</label><select id="format"><option value="svg">SVG · objeto inteligente</option><option value="png">PNG · objeto inteligente</option></select></div>
+   <p class="hint" id="formatHint">Conserva el SVG dentro del documento. Los trazados no se convierten en capas de forma.</p>
+  </div>
+ </section>
+</main>
+<footer><div id="status" role="status" aria-live="polite">Listo para diseñar.</div><div class="actions"><button id="saveSVG" class="secondary">Guardar SVG</button><button id="savePNG" class="secondary">PNG</button><button id="insert" class="primary">Insertar en Photoshop <span>↗</span></button></div></footer>
+<script src="../data/catalog.js"></script><script src="../renderer.js"></script><script src="app.js"></script>
+</body></html>

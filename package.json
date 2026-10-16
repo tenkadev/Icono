@@ -1,0 +1,24 @@
+{
+  "name": "icono-photoshop",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Panel local de iconos para Adobe Photoshop UXP",
+  "license": "MIT",
+  "author": "Tenka",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tenkadev/Icono.git"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node tests/renderer.cjs && node tests/host.cjs && node tests/ui.cjs",
+    "build:catalog": "python tools/build_catalog.py",
+    "package": "python tools/package.py"
+  },
+  "devDependencies": {
+    "playwright": "1.51.1",
+    "sharp": "0.35.4"
+  }
+}
