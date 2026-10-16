@@ -8,7 +8,7 @@ Un panel UXP en español con **5.706 iconos locales**, favoritos, degradados y e
 
 ![Panel de Icono: biblioteca de iconos y controles de personalización](docs/images/icono-panel-wide.png)
 
-> **Versión 0.1.0 — experimental.** La interfaz, la exportación y la lógica del puente tienen pruebas automatizadas. La instalación CCX y la inserción en Photoshop todavía requieren validación en la aplicación real.
+> **Versión 0.1.0 — experimental.** La interfaz, la exportación y la lógica del puente tienen pruebas automatizadas. La instalación CCX y la inserción en Photoshop todavía requieren validación en la aplicación real en versiones antiguas.
 
 ## Qué puedes hacer
 
